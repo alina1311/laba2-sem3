@@ -84,7 +84,7 @@ Sequence <T>* merge_sort_for_seq(Sequence <T>* seq, int (*cmp)(T, T)) {
 
 
 template <typename T>
-class BST {
+class BST_for_sort {
 private:
     struct node {
         T data;
@@ -93,7 +93,6 @@ private:
     };
     node* root;
     int count_for_KLP;
-    // дл€ деструктора
     void destroy_tree(node* branch) {
         if (branch != nullptr) {
             destroy_tree(branch->left);
@@ -108,7 +107,7 @@ private:
         return 0;
     }
 
-    void insert_help(node* branch, T item) {    // помощь дл€ вставки 
+    void insert_help(node* branch, T item) {    
         node* cur = branch;
         if (cmp_for_BST(cur->data, item)) {
             if (cur->left != nullptr) {
@@ -134,7 +133,6 @@ private:
         }
     }
 
-    // дл€ пробега
 
     Sequence<T>* LKP_help(node* branch, Sequence<T>* seq) {
         node* tmp = branch; // KLP
@@ -148,12 +146,12 @@ private:
     }
 
 public:
-    BST() {
+    BST_for_sort() {
         this->root = nullptr;
         count_for_KLP = 0;
     };
 
-    ~BST() {
+    ~BST_for_sort() {
         destroy_tree(this->root);
         count_for_KLP = 0;
     };
@@ -174,9 +172,10 @@ public:
     }
 };
 
+
 template <typename T>
 Sequence<T>* sort_with_tree(Sequence<T>* seq, int (*cmp)(T, T)) {
-    BST<T> assist_tree;
+    BST_for_sort<T> assist_tree;
     for (int i = 0; i < seq->GetLength(); i++) {
         assist_tree.insert(seq->Get(i));
     }
