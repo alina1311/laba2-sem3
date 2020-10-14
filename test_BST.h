@@ -2,12 +2,6 @@
 #include <cassert>
 #include "BST.h"
 
-int compare_int_for_BST(int a, int b) {
-    if (a > b)
-        return 1;
-    return 0;
-}
-
 void test_is_empty_1() {
     BST<int>* a = new BST<int>(compare_int_for_BST);
     a->insert(13);

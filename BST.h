@@ -332,3 +332,9 @@ public:
         return cur->data;
     }
 };
+
+int compare_int_for_BST(int a, int b) {
+    if (a > b)
+        return 1;
+    return 0;
+}

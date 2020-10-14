@@ -2,12 +2,14 @@
 #include <cassert>
 
 
-int compare_int_int_pairs(Dictionary<int, int>::Tpair_for_dict a,
-    Dictionary<int, int>::Tpair_for_dict b) {
+int compare_int_int_pairs(Tpair_for_dict<int, int> a,
+    Tpair_for_dict<int, int> b) {
     if (a.key > b.key)
         return 1;
     return 0;
 }
+
+
 
 void test_1_count_dic() {
     Dictionary<int, int>* testing_dict = new Dictionary<int, int>(compare_int_int_pairs);
