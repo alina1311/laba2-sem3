@@ -83,8 +83,6 @@ public:
         return Conclist;
     }
 
-    void print() override {
-        this->list->print_list();
-    }
+
 };
 

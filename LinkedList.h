@@ -51,16 +51,6 @@ public:
         this->size = 0;
     }
 
-    void print_list() {
-        node* cur = head;
-        for (int i = 0; i < this->size && i < 100; i++) {
-            cout << cur->items << "  ";
-            cur = cur->next;
-            if (i != 0 && i % 14 == 0)
-                cout << endl;
-        }
-        cout << endl;
-    }
 
     T GetFirst() {
         if (this->size <= 0) throw out_of_range(IndexOutOfRangeEx);

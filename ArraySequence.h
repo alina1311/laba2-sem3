@@ -97,7 +97,4 @@ public:
         return newconc;
     }
 
-    void print() override {
-        this->MyArray->print_array();
-    }
 };

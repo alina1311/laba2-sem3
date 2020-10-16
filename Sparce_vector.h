@@ -1,13 +1,6 @@
 #pragma once
 #include "Dictionary.h"
 
-template<class T>
-int compare_pairs(Tpair_for_dict<int, T> a, Tpair_for_dict<int, T> b) {
-    if (a.key > b.key)
-        return 1;
-    return 0;
-}
-
 template <class T>
 class Sparce_vector {
 private:

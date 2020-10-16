@@ -9,7 +9,7 @@ private:
     struct node {
         T data;
         node* left;
-        node* right;
+        node* right; 
     };
     node* root;
     int count;

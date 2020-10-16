@@ -1,3 +1,4 @@
+#pragma once
 #include "Dictionary.h"
 #include <cassert>
 
@@ -8,8 +9,6 @@ int compare_int_int_pairs(Tpair_for_dict<int, int> a,
         return 1;
     return 0;
 }
-
-
 
 void test_1_count_dic() {
     Dictionary<int, int>* testing_dict = new Dictionary<int, int>(compare_int_int_pairs);

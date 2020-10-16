@@ -10,8 +10,6 @@ struct Tpair_for_dict {
 
 template<class Tkey, class Telement>
 class Dictionary {
-public:
-
 private:
     BST<Tpair_for_dict<Tkey,Telement>>* tree;
     int (*cmp)(Tpair_for_dict<Tkey, Telement>, Tpair_for_dict<Tkey, Telement>);
