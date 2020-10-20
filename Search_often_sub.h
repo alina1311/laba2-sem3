@@ -70,6 +70,7 @@ public:
         for (size_t i = 0; i < vect->size(); i++) {
             seq->Set(i, vect->at(i));
         }
+        vect->clear();
         return seq;
     }
 
@@ -81,8 +82,17 @@ public:
         return dict->Get(sub);
     }
 
-    string Get_max_string() {
-        return max_string;
+    Sequence<Tpair_for_dict<string, int>>* Get_max() {
+         vector<Tpair_for_dict<string, int>>* vect = dict->LKP();
+         ArraySequence<Tpair_for_dict<string, int>>* arr = new
+             ArraySequence<Tpair_for_dict<string, int>>;
+         for (size_t i = 0; i < vect->size(); i++) {
+             if (vect->at(i).element == max_count) {
+                 arr->Append(vect->at(i));
+             }
+         }
+         vect->clear();
+         return arr;
     }
 
     int Get_max_count() {
