@@ -40,6 +40,14 @@ public:
         return seq->GetFirst();
     }
 
+    bool Contain(T item) {
+        for (int i = 0; i < seq->GetLength(); i++) {
+            if (seq->Get(i) == item)
+                return 1;
+        }
+        return 0;
+    }
+
     int IndexOf(T item) {
         for (int i = 0; i < seq->GetLength(); i++) {
             if (seq->Get(i) == item)
@@ -86,9 +94,8 @@ public:
         else                              // нашел элемент с таким же значением(как айтем)
             seq->InsertAt(item, needed);
     }
-
    
-
+   
     void print() {
         seq->print();
     }

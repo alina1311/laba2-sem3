@@ -91,6 +91,29 @@ void test_7_remove_dic() {
     assert(testing_dict->Count() == 5);
 }
 
+void test_8_LKP_dic() {
+    Dictionary<int, int>* testing_dict = new Dictionary<int, int>(4, 5, compare_int_int_pairs);
+    testing_dict->Add(7, 362);
+    testing_dict->Add(13, 52);
+    testing_dict->Add(6161, -32);
+    testing_dict->Add(3, 0);
+    testing_dict->Add(8, 132);
+    vector<Tpair_for_dict<int, int>>* vect = testing_dict->LKP();
+    assert(vect->at(0).key == 3);
+    assert(vect->at(1).key == 4);
+    assert(vect->at(2).key == 7);
+    assert(vect->at(3).key == 8);
+    assert(vect->at(4).key == 13);
+    assert(vect->at(5).key == 6161);
+    assert(vect->at(0).element == 0);
+    assert(vect->at(1).element == 5);
+    assert(vect->at(2).element == 362);
+    assert(vect->at(3).element == 132);
+    assert(vect->at(4).element == 52);
+    assert(vect->at(5).element == -32);
+}
+
+
 void TEST_ALL_DICTIONARY() {
     test_1_count_dic();
     test_2_count_dic();
@@ -99,4 +122,5 @@ void TEST_ALL_DICTIONARY() {
     test_5_get_dic();
     test_6_contain_dic();
     test_7_remove_dic();
+    test_8_LKP_dic();
 }

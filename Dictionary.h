@@ -72,5 +72,10 @@ public:
         }
         delete vector_print;
     }
+
+    vector<Tpair_for_dict<Tkey, Telement>>* LKP() {
+        return tree->LKP();
+    }
+
 };
 
