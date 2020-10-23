@@ -37,6 +37,10 @@ public:
         return size;
     }
 
+    Dictionary<int, T>* Get_dictionary() {
+        return this->dict;
+    }
+
     void Print() {
         dict->Print();
     }
